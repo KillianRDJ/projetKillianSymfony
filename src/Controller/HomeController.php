@@ -16,14 +16,4 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
-
-    /**
-     * @Route("/prix", name="prix")
-     */
-    public function pricing()
-    {
-        return $this->render('home/prix.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);
-    }
 }
