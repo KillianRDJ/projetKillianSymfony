@@ -552,12 +552,6 @@ textarea:focus {
 .single-blog-post {
   position: relative;
   z-index: 1; }
-  .single-blog-post .post-thumb {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 130px;
-    flex: 0 0 130px;
-    min-width: 130px;
-    width: 130px; }
     .single-blog-post .post-thumb a {
       display: block; }
   .single-blog-post .post-data {
@@ -1335,3 +1329,12 @@ textarea:focus {
       height: 500px; } }
 
 /*# sourceMappingURL=style.css.map */
+.margin-right-40{
+  margin-right:40px;
+}
+.margin-top-10{
+  margin-top:10px;
+}
+.no-margin-bottom{
+  margin-bottom:0px;
+}

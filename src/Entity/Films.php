@@ -64,12 +64,12 @@ class Films
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $desc;
+    private $description;
 
     /**
      * @ORM\Column(type="integer", length=1)
      */
-    private $limit;
+    private $limitation;
 
     /**
      * @return mixed
@@ -90,33 +90,33 @@ class Films
     /**
      * @return mixed
      */
-    public function getDesc()
+    public function getDescription()
     {
-        return $this->desc;
+        return $this->description;
     }
 
     /**
-     * @param mixed $desc
+     * @param mixed $description
      */
-    public function setDesc($desc): void
+    public function setDescription($description): void
     {
-        $this->desc = $desc;
+        $this->description = $description;
     }
 
     /**
      * @return mixed
      */
-    public function getLimit()
+    public function getLimitation()
     {
-        return $this->limit;
+        return $this->limitation;
     }
 
     /**
      * @param mixed $limit
      */
-    public function setLimit($limit): void
+    public function setLimitation($limitation): void
     {
-        $this->limit = $limit;
+        $this->limitation = $limitation;
     }
 
     public function getId(): ?int
