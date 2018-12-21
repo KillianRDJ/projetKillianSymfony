@@ -1,6 +1,3 @@
-#// TODO: 1) Create à view home and more page
-#// TODO: 2) Crée un composant user.
-#// TODO: 2.1) Crée une page d'inscription(2) et de connexion(3)
-#// TODO: 2.2) Pour la page d'inscription mettre : 1er slide(nom, prenom, email, secteur d'entreprise* Si tel secteur pris on attribue un theme special, numéro de téléphone)
-#// TODO: 2.2) 2ème slide(Si c'est tel secteur alors on affiche les options(pas encore étalbie)) 3ème slide(5 jours pour esseyer mais obligatoire de mettre la carte bleu avec abonnement par mois)
+#// TODO: Fiche films : Finir le header de la jaquette + ajouter bouton voir la bande annonce + boutton ancre voir le film
+#// ADD: Fiche films : Faire la partie basse avec filtre + lecteurs + tags du films et mettre les suggestions de film (similaire par genre ou nationalite) x6
 

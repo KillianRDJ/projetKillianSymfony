@@ -2,34 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="165fdb8a-7dd7-4bb1-928f-6aa64c305d03" name="Default Changelist" comment="Add: Films">
-      <change afterPath="$PROJECT_DIR$/config/packages/sonata_admin.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/sonata_admin.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Admin/FilmsCategoriesAdmin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/footer.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/menu.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/sidebar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/project1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/project1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/films/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/framework.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/FilmsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FilmsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Films.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Films.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Users.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20181113111711.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20181217172017.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footer.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/index.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sidebar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/todo.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,13 +58,13 @@
       <usages-collector id="statistics.spring.boot.mvc.usages" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="148" />
+          <entry key="CSS" value="683" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="202" />
-          <entry key="PHP" value="1097" />
+          <entry key="PHP" value="1572" />
           <entry key="PLAIN_TEXT" value="64" />
-          <entry key="Twig" value="466" />
-          <entry key="YAML" value="1093" />
+          <entry key="Twig" value="1888" />
+          <entry key="YAML" value="1462" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.composer.command.options" />
@@ -88,11 +74,11 @@
           <entry key="IDEA_MODULE" value="1" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="7" />
-          <entry key="PHP" value="47" />
+          <entry key="PHP" value="50" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Twig" value="20" />
+          <entry key="Twig" value="21" />
           <entry key="XML" value="7" />
-          <entry key="YAML" value="30" />
+          <entry key="YAML" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.test" />
@@ -107,23 +93,23 @@
           <entry key="iml" value="1" />
           <entry key="js" value="7" />
           <entry key="json" value="1" />
-          <entry key="php" value="47" />
-          <entry key="twig" value="20" />
+          <entry key="php" value="50" />
+          <entry key="twig" value="21" />
           <entry key="xml" value="7" />
-          <entry key="yaml" value="27" />
+          <entry key="yaml" value="28" />
           <entry key="yml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="148" />
+          <entry key="css" value="683" />
           <entry key="env" value="48" />
           <entry key="js" value="202" />
           <entry key="json" value="1" />
-          <entry key="php" value="1097" />
-          <entry key="twig" value="466" />
+          <entry key="php" value="1572" />
+          <entry key="twig" value="1888" />
           <entry key="txt" value="16" />
-          <entry key="yaml" value="1093" />
+          <entry key="yaml" value="1462" />
         </counts>
       </usages-collector>
     </session>
@@ -131,32 +117,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
-              <folding>
-                <element signature="e#274#288#0#Twig" expanded="true" />
-                <element signature="e#413#429#0#Twig" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/sidebar.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1299">
-              <caret line="112" column="3" selection-start-line="112" selection-start-column="3" selection-end-line="112" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/footer.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="772">
-              <caret line="117" selection-start-line="117" selection-end-line="117" />
+            <state relative-caret-position="595">
+              <caret line="35" column="79" selection-start-line="35" selection-start-column="79" selection-end-line="35" selection-end-column="79" />
               <folding>
                 <element signature="e#5431#5437#0#HTML" expanded="true" />
               </folding>
@@ -176,13 +140,55 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/FilmsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="721">
+              <caret line="48" column="21" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="21" />
+              <folding>
+                <element signature="e#34#69#0#PHP" expanded="true" />
+                <element signature="e#1071#1093#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/films/show.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="67" />
+              <folding>
+                <element signature="e#12#26#0#Twig" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Films.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1095">
+              <caret line="225" column="14" selection-start-line="225" selection-start-column="14" selection-end-line="225" selection-end-column="14" />
+              <folding>
+                <element signature="e#30#62#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Repository/FilmsRepository.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+            <state relative-caret-position="238">
+              <caret line="14" column="188" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="188" />
               <folding>
-                <element signature="e#15060#15077#0#Twig" expanded="true" />
+                <element signature="e#20743#20760#0#Twig" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -191,8 +197,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="1337" column="17" selection-start-line="1337" selection-start-column="1" selection-end-line="1337" selection-end-column="17" />
+            <state relative-caret-position="748">
+              <caret line="1423" column="1" selection-start-line="1423" selection-start-column="1" selection-end-line="1423" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -200,38 +206,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/build/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="724">
-              <caret line="4295" column="1" selection-start-line="4295" selection-start-column="1" selection-end-line="4295" selection-end-column="1" />
+            <state relative-caret-position="721">
+              <caret line="4384" selection-start-line="4384" selection-end-line="4384" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/menu.html.twig">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/todo.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="772">
-              <caret line="134" column="9" selection-start-line="134" selection-start-column="9" selection-end-line="134" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webpack.config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="1" column="157" selection-start-line="1" selection-start-column="157" selection-end-line="1" selection-end-column="157" />
             </state>
           </provider>
         </entry>
@@ -260,6 +245,14 @@
       <find>desc</find>
       <find>owl</find>
       <find>.single-blog-post .post-thumb</find>
+      <find>.single-blog-post.style-3 .post-thumb</find>
+      <find>.single-blog-post.style-3 .post-data .post-title h6</find>
+      <find>.hero-area</find>
+      <find>.treading-articles-widget h4</find>
+      <find>top-site</find>
+      <find>.footer-area .footer-widget-area .widget-title</find>
+      <find>.single-blog-post.style-3 .post-data .post-catagory</find>
+      <find>.single-blog-post.style-2 .post-thumb</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -270,7 +263,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/templates/home/ index.html.twig" />
-        <option value="$PROJECT_DIR$/todo.yaml" />
         <option value="$PROJECT_DIR$/templates/home/pricing.html.twig" />
         <option value="$PROJECT_DIR$/templates/home/prix.html.twig" />
         <option value="$PROJECT_DIR$/config/packages/fos_user.yaml" />
@@ -295,18 +287,20 @@
         <option value="$PROJECT_DIR$/src/Admin/FilmsCategoriesAdmin.php" />
         <option value="$PROJECT_DIR$/src/Entity/FilmsCategories.php" />
         <option value="$PROJECT_DIR$/config/services.yaml" />
-        <option value="$PROJECT_DIR$/src/Entity/Films.php" />
         <option value="$PROJECT_DIR$/src/Admin/FilmsAdmin.php" />
-        <option value="$PROJECT_DIR$/templates/sidebar.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/FilmsController.php" />
-        <option value="$PROJECT_DIR$/templates/menu.html.twig" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/assets/js/app.js" />
-        <option value="$PROJECT_DIR$/templates/footer.html.twig" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/templates/sidebar.html.twig" />
+        <option value="$PROJECT_DIR$/templates/menu.html.twig" />
+        <option value="$PROJECT_DIR$/templates/footer.html.twig" />
+        <option value="$PROJECT_DIR$/src/Entity/Films.php" />
+        <option value="$PROJECT_DIR$/templates/home/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/FilmsController.php" />
+        <option value="$PROJECT_DIR$/templates/films/show.html.twig" />
         <option value="$PROJECT_DIR$/assets/css/style.css" />
         <option value="$PROJECT_DIR$/public/build/app.css" />
-        <option value="$PROJECT_DIR$/templates/home/index.html.twig" />
+        <option value="$PROJECT_DIR$/todo.yaml" />
       </list>
     </option>
   </component>
@@ -548,6 +542,18 @@
             <path>
               <item name="project1" type="b2602c69:ProjectViewProjectNode" />
               <item name="project1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project1" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -560,7 +566,7 @@
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545325560784" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545411395382" />
     <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -606,7 +612,7 @@
       <workItem from="1542031370926" duration="12104000" />
       <workItem from="1543221145438" duration="971000" />
       <workItem from="1543939250230" duration="694000" />
-      <workItem from="1544178558029" duration="38153000" />
+      <workItem from="1544178558029" duration="53468000" />
     </task>
     <task id="LOCAL-00001" summary="Add: Films">
       <created>1545067316240</created>
@@ -619,7 +625,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53019000" />
+    <option name="totallyTimeSpent" value="68334000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -634,7 +640,7 @@
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1337953" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1337953" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -648,7 +654,7 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" weight="0.329718" />
+      <window_info active="true" anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" visible="true" weight="0.329718" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.30911064" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50053304" side_tool="true" weight="0.329718" />
@@ -664,7 +670,7 @@
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.32995737" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1337953" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1337953" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -682,7 +688,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.30911064" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.329718" />
-      <window_info anchor="bottom" id="Version Control" order="11" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -735,27 +741,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/css/css/animate.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/css/font-awesome.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="801" selection-start-line="3" selection-start-column="801" selection-end-line="3" selection-end-column="801" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/css/owl.carousel.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="169" column="36" selection-start-line="169" selection-start-column="36" selection-end-line="169" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/css/classy-nav.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -926,13 +911,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Films.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="98" column="21" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/sonata_admin.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -966,34 +944,10 @@
     <entry file="file://$PROJECT_DIR$/templates/film/home.html.twig">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/FilmsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/menu.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="772">
-          <caret line="134" column="9" selection-start-line="134" selection-start-column="9" selection-end-line="134" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding>
-            <element signature="e#310#332#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1007,13 +961,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/footer.html.twig">
+    <entry file="file://$PROJECT_DIR$/templates/sidebar.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="772">
-          <caret line="117" selection-start-line="117" selection-end-line="117" />
-          <folding>
-            <element signature="e#5431#5437#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="425">
+          <caret line="25" column="73" selection-start-line="25" selection-start-column="73" selection-end-line="25" selection-end-column="73" />
         </state>
       </provider>
     </entry>
@@ -1028,34 +979,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sidebar.html.twig">
+    <entry file="file://$PROJECT_DIR$/templates/menu.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1299">
-          <caret line="112" column="3" selection-start-line="112" selection-start-column="3" selection-end-line="112" selection-end-column="3" />
+        <state relative-caret-position="357">
+          <caret line="21" column="70" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="70" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/build/app.css">
+    <entry file="file://$PROJECT_DIR$/templates/footer.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
-          <caret line="4295" column="1" selection-start-line="4295" selection-start-column="1" selection-end-line="4295" selection-end-column="1" />
+        <state relative-caret-position="595">
+          <caret line="35" column="79" selection-start-line="35" selection-start-column="79" selection-end-line="35" selection-end-column="79" />
+          <folding>
+            <element signature="e#5431#5437#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
+    <entry file="file://$PROJECT_DIR$/src/Controller/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="1337" column="17" selection-start-line="1337" selection-start-column="1" selection-end-line="1337" selection-end-column="17" />
+        <state relative-caret-position="221">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+          <folding>
+            <element signature="e#310#332#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/FilmsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="721">
+          <caret line="48" column="21" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="21" />
+          <folding>
+            <element signature="e#34#69#0#PHP" expanded="true" />
+            <element signature="e#1071#1093#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/FilmsRepository.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Films.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="225" column="14" selection-start-line="225" selection-start-column="14" selection-end-line="225" selection-end-column="14" />
+          <folding>
+            <element signature="e#30#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/films/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="67" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/home/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+        <state relative-caret-position="238">
+          <caret line="14" column="188" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="188" />
           <folding>
-            <element signature="e#15060#15077#0#Twig" expanded="true" />
+            <element signature="e#20743#20760#0#Twig" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="1423" column="1" selection-start-line="1423" selection-start-column="1" selection-end-line="1423" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/build/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="721">
+          <caret line="4384" selection-start-line="4384" selection-end-line="4384" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todo.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="157" selection-start-line="1" selection-start-column="157" selection-end-line="1" selection-end-column="157" />
         </state>
       </provider>
     </entry>
