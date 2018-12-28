@@ -1,0 +1,59 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Link Vidéo{% endblock %}
+
+{% block body %}
+<main class="main">
+    <ol class="breadcrumb">
+    </ol>
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fa fa-align-justify"></i> Tous les liens de vidéo</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Url</th>
+                                <th>IdVideo</th>
+                                <th>Player</th>
+                                <th>Version</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                {% for link_asset in link_assets %}
+                                    <tr>
+                                        <td>{{ link_asset.id }}</td>
+                                        <td>{{ link_asset.url }}</td>
+                                        <td>{{ link_asset.idAsset }}</td>
+                                        <td>{{ link_asset.player }}</td>
+                                        <td>{{ link_asset.version }}</td>
+                                        <td>
+                                            <span class="badge badge-warning"> <a href="{{ path('admin.linkvideo.show', {'id': link_asset.id}) }}">show</a></span>
+                                            <span class="badge badge-warning"><a href="{{ path('admin.linkvideo.edit', {'id': link_asset.id}) }}">edit</a></span>
+                                        </td>
+                                    </tr>
+                                {% else %}
+                                    <tr>
+                                        <td colspan="7">no records found</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <a class="btn btn-primary float-right" href="{{ path('admin.linkvideo.new') }}">Create new</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+{% endblock %}

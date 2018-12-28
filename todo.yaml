@@ -1,3 +1,15 @@
-#// TODO: Fiche films : Finir le header de la jaquette + ajouter bouton voir la bande annonce + boutton ancre voir le film
-#// ADD: Fiche films : Faire la partie basse avec filtre + lecteurs + tags du films et mettre les suggestions de film (similaire par genre ou nationalite) x6
+#// TODO BACKEND
+  #// Ajouter une count dans linkvideofilms en disant que X manque des liens
+  #// Crée une recherche dans les genres, realisateurs, acteurs
+  #// Crée une pagination pour les genres, realisateurs, acteurs (limit 20)
+  #// Lors d'une génération d'un films, regarder si le film n'existe pas
+  #// TODO DAY :
+  #// Ajouter (13) films 3)
+  #// Faire toute la génération sur le front. 4)
 
+#// TODO SAMEDI :
+  #// Ajouter les realisateurs + les genres dans admin.films.index
+  #// Crée la partie Séries
+  #// Chaque séries à une saison avec plusieurs épisodes, aussi elle peut avoir plusierus saison
+  #// Crée l'entité séries : dans cette entitée mettre : name, relation avec genre+acteurs+realisateurs, number episode, number saison,
+  #// Crée entitée video_séries : dans cette entitée mettre : url, relation avec séries, saison_number, episode_number

@@ -1,0 +1,468 @@
+Index: src/Admin/FilmsCategoriesAdmin.php
+===================================================================
+--- src/Admin/FilmsCategoriesAdmin.php	(revision cc5fa643a6e0a690ea682f5752db5d8db4b254ff)
++++ src/Admin/FilmsCategoriesAdmin.php	(revision cc5fa643a6e0a690ea682f5752db5d8db4b254ff)
+@@ -1,32 +0,0 @@
+-<?php
+-
+-namespace App\Admin;
+-
+-use Sonata\AdminBundle\Admin\AbstractAdmin;
+-use Sonata\AdminBundle\Datagrid\ListMapper;
+-use Sonata\AdminBundle\Datagrid\DatagridMapper;
+-use Sonata\AdminBundle\Form\FormMapper;
+-use Symfony\Component\Form\Extension\Core\Type\TextType;
+-
+-class FilmsCategoriesAdmin  extends AbstractAdmin{
+-
+-    protected function configureFormFields(FormMapper $formMapper){
+-        $formMapper
+-            ->add('name', TextType::class)
+-        ;
+-    }
+-
+-    protected function configureDatagridFilters(DatagridMapper $datagridMapper){
+-        $datagridMapper
+-            ->add('name')
+-        ;
+-    }
+-
+-    protected function configureListFields(ListMapper $listMapper){
+-        $listMapper
+-            ->addIdentifier('name')
+-        ;
+-    }
+-}
+-
+-?>
+\ No newline at end of file
+Index: .idea/project1.iml
+===================================================================
+--- .idea/project1.iml	(revision cc5fa643a6e0a690ea682f5752db5d8db4b254ff)
++++ .idea/project1.iml	(revision cc5fa643a6e0a690ea682f5752db5d8db4b254ff)
+@@ -1,123 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+-    <exclude-output />
+-    <content url="file://$MODULE_DIR$">
+-      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="App\Tests\" />
+-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="App\" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/cocur/slugify" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/annotations" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/cache" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/collections" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/common" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/dbal" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/doctrine-bundle" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/doctrine-cache-bundle" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/doctrine-migrations-bundle" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/event-manager" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/inflector" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/lexer" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/migrations" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/orm" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/persistence" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/reflection" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/easycorp/easy-log-handler" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/egulias/email-validator" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/facebook/webdriver" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/fig/link-util" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/friendsofsymfony/user-bundle" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/jdorn/sql-formatter" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/knplabs/knp-menu" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/knplabs/knp-menu-bundle" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/monolog/monolog" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/ocramius/package-versions" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/ocramius/proxy-manager" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-common" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-docblock" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/type-resolver" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/cache" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/link" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/simple-cache" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/sensio/framework-extra-bundle" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/sonata-project/admin-bundle" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/sonata-project/block-bundle" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/sonata-project/cache" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/sonata-project/core-bundle" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/sonata-project/datagrid-bundle" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/sonata-project/doctrine-extensions" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/sonata-project/exporter" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/asset" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/browser-kit" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/cache" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/config" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/console" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/css-selector" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/debug" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/debug-bundle" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/debug-pack" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/dependency-injection" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/doctrine-bridge" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/dom-crawler" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/dotenv" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/expression-language" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/filesystem" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/finder" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/flex" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/form" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/framework-bundle" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/http-foundation" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/http-kernel" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/inflector" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/intl" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/maker-bundle" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/monolog-bridge" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/monolog-bundle" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/options-resolver" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/orm-pack" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/panther" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/phpunit-bridge" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-icu" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php72" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/process" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/profiler-pack" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/property-access" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/property-info" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/routing" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/security" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/security-acl" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/security-bundle" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/serializer" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/serializer-pack" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/stopwatch" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/swiftmailer-bundle" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/templating" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/test-pack" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/twig-bridge" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/twig-bundle" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/validator" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/var-dumper" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/web-link" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/web-profiler-bundle" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/web-server-bundle" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/webpack-encore-bundle" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/yaml" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/twig/extensions" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/twig/twig" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-code" />
+-      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-eventmanager" />
+-    </content>
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: config/routes/sonata_admin.yaml
+===================================================================
+--- config/routes/sonata_admin.yaml	(revision cc5fa643a6e0a690ea682f5752db5d8db4b254ff)
++++ config/routes/sonata_admin.yaml	(revision cc5fa643a6e0a690ea682f5752db5d8db4b254ff)
+@@ -1,8 +0,0 @@
+-admin_area:
+-  resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+-  prefix: /admin
+-
+-_sonata_admin:
+-  resource: .
+-  type: sonata_admin
+-  prefix: /admin
+\ No newline at end of file
+Index: config/packages/sonata_admin.yaml
+===================================================================
+--- config/packages/sonata_admin.yaml	(revision cc5fa643a6e0a690ea682f5752db5d8db4b254ff)
++++ config/packages/sonata_admin.yaml	(revision cc5fa643a6e0a690ea682f5752db5d8db4b254ff)
+@@ -1,8 +0,0 @@
+-# config/packages/sonata_admin.yaml
+-sonata_block:
+-  blocks:
+-    # enable the SonataAdminBundle block
+-    sonata.admin.block.admin_list:
+-      contexts: [admin]
+-
+-    # ...
+\ No newline at end of file
+Index: src/Repository/FilmsCategoriesRepository.php
+===================================================================
+--- src/Repository/FilmsCategoriesRepository.php	(revision cc5fa643a6e0a690ea682f5752db5d8db4b254ff)
++++ src/Repository/FilmsCategoriesRepository.php	(revision cc5fa643a6e0a690ea682f5752db5d8db4b254ff)
+@@ -1,50 +0,0 @@
+-<?php
+-
+-namespace App\Repository;
+-
+-use App\Entity\FilmsCategories;
+-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+-use Symfony\Bridge\Doctrine\RegistryInterface;
+-
+-/**
+- * @method FilmsCategories|null find($id, $lockMode = null, $lockVersion = null)
+- * @method FilmsCategories|null findOneBy(array $criteria, array $orderBy = null)
+- * @method FilmsCategories[]    findAll()
+- * @method FilmsCategories[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+- */
+-class FilmsCategoriesRepository extends ServiceEntityRepository
+-{
+-    public function __construct(RegistryInterface $registry)
+-    {
+-        parent::__construct($registry, FilmsCategories::class);
+-    }
+-
+-    // /**
+-    //  * @return FilmsCategories[] Returns an array of FilmsCategories objects
+-    //  */
+-    /*
+-    public function findByExampleField($value)
+-    {
+-        return $this->createQueryBuilder('f')
+-            ->andWhere('f.exampleField = :val')
+-            ->setParameter('val', $value)
+-            ->orderBy('f.id', 'ASC')
+-            ->setMaxResults(10)
+-            ->getQuery()
+-            ->getResult()
+-        ;
+-    }
+-    */
+-
+-    /*
+-    public function findOneBySomeField($value): ?FilmsCategories
+-    {
+-        return $this->createQueryBuilder('f')
+-            ->andWhere('f.exampleField = :val')
+-            ->setParameter('val', $value)
+-            ->getQuery()
+-            ->getOneOrNullResult()
+-        ;
+-    }
+-    */
+-}
+Index: src/Controller/UsersController.php
+===================================================================
+--- src/Controller/UsersController.php	(revision cc5fa643a6e0a690ea682f5752db5d8db4b254ff)
++++ src/Controller/UsersController.php	(revision cc5fa643a6e0a690ea682f5752db5d8db4b254ff)
+@@ -1,19 +0,0 @@
+-<?php
+-
+-namespace App\Controller;
+-
+-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+-use Symfony\Component\Routing\Annotation\Route;
+-
+-class UsersController extends AbstractController
+-{
+-    /**
+-     * @Route("/users", name="users")
+-     */
+-    public function index()
+-    {
+-        return $this->render('users/index.html.twig', [
+-            'controller_name' => 'UsersController',
+-        ]);
+-    }
+-}
+Index: src/Admin/FilmsAdmin.php
+===================================================================
+--- src/Admin/FilmsAdmin.php	(revision cc5fa643a6e0a690ea682f5752db5d8db4b254ff)
++++ src/Admin/FilmsAdmin.php	(revision cc5fa643a6e0a690ea682f5752db5d8db4b254ff)
+@@ -1,56 +0,0 @@
+-<?php
+-
+-namespace App\Admin;
+-
+-use App\Entity\Films;
+-use App\Entity\FilmsCategories;
+-use function PHPSTORM_META\type;
+-use Sonata\AdminBundle\Admin\AbstractAdmin;
+-use Sonata\AdminBundle\Datagrid\ListMapper;
+-use Sonata\AdminBundle\Datagrid\DatagridMapper;
+-use Sonata\AdminBundle\Form\FormMapper;
+-use Symfony\Component\Form\Extension\Core\Type\DateType;
+-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+-use Symfony\Component\Form\Extension\Core\Type\TextType;
+-
+-class FilmsAdmin extends AbstractAdmin{
+-
+-    protected function configureFormFields(FormMapper $formMapper){
+-        $formMapper
+-            ->with('Titre du film & Description', ['class' => 'col-md-9'])
+-            ->add('name', TextType::class)
+-            ->add('description', TextareaType::class)
+-            ->end()
+-            ->with('Petit plus du film', ['class' => 'col-md-3'])
+-            ->add('genre', TextType::class)
+-            ->add('realisateur', TextType::class)
+-            ->add('time_film', TextType::class)
+-            ->add('date_sortie', DateType::class)
+-            ->add('acteurs', TextType::class)
+-            ->add('notes_allocine', TextType::class)
+-            ->add('notes', TextType::class)
+-            ->add('nationalite', TextType::class)
+-            ->add('limitation', IntegerType::class)
+-            ->end()
+-
+-        ;
+-    }
+-
+-    protected function configureDatagridFilters(DatagridMapper $datagridMapper){
+-        $datagridMapper->add('name')
+-        ;
+-    }
+-
+-    protected function configureListFields(ListMapper $listMapper){
+-        $listMapper
+-            ->addIdentifier('name')
+-            ->add('realisateur')
+-            ->add('genre')
+-            ->add('nationalite')
+-            ->add('notes')
+-        ;
+-    }
+-}
+-
+-?>
+\ No newline at end of file
+Index: src/Entity/FilmsCategories.php
+===================================================================
+--- src/Entity/FilmsCategories.php	(revision cc5fa643a6e0a690ea682f5752db5d8db4b254ff)
++++ src/Entity/FilmsCategories.php	(revision cc5fa643a6e0a690ea682f5752db5d8db4b254ff)
+@@ -1,72 +0,0 @@
+-<?php
+-
+-namespace App\Entity;
+-
+-use Doctrine\Common\Collections\ArrayCollection;
+-use Doctrine\ORM\Mapping as ORM;
+-
+-/**
+- * @ORM\Entity(repositoryClass="App\Repository\FilmsCategoriesRepository")
+- */
+-class FilmsCategories
+-{
+-    /**
+-     * @ORM\Id()
+-     * @ORM\GeneratedValue()
+-     * @ORM\Column(type="integer")
+-     */
+-    private $id;
+-
+-    /**
+-     * @var string
+-     *
+-     * @ORM\Column(name="name", type="string")
+-     */
+-    private $name;
+-
+-    /**
+-     * @ORM\OneToMany(targetEntity="App\Entity\Films", mappedBy="filmscategories")
+-     */
+-    private $film;
+-
+-    public function __construct()
+-    {
+-        $this->film = new ArrayCollection();
+-    }
+-
+-    public function getFilm(){
+-        return $this->film;
+-    }
+-
+-    /**
+-     * @return mixed
+-     */
+-    public function getId()
+-    {
+-        return $this->id;
+-    }
+-
+-    /**
+-     * @param mixed $id
+-     */
+-    public function setId($id): void
+-    {
+-        $this->id = $id;
+-    }
+-
+-    /**
+-     * @return mixed
+-     */
+-    public function getName()
+-    {
+-        return $this->name;
+-    }
+-
+-    /**
+-     * @param mixed $name
+-     */
+-    public function setName($name): void
+-    {
+-        $this->name = $name;
+-    }
+-}
+Index: src/Repository/UsersRepository.php
+===================================================================
+--- src/Repository/UsersRepository.php	(revision cc5fa643a6e0a690ea682f5752db5d8db4b254ff)
++++ src/Repository/UsersRepository.php	(revision cc5fa643a6e0a690ea682f5752db5d8db4b254ff)
+@@ -1,50 +0,0 @@
+-<?php
+-
+-namespace App\Repository;
+-
+-use App\Entity\Users;
+-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+-use Symfony\Bridge\Doctrine\RegistryInterface;
+-
+-/**
+- * @method Users|null find($id, $lockMode = null, $lockVersion = null)
+- * @method Users|null findOneBy(array $criteria, array $orderBy = null)
+- * @method Users[]    findAll()
+- * @method Users[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+- */
+-class UsersRepository extends ServiceEntityRepository
+-{
+-    public function __construct(RegistryInterface $registry)
+-    {
+-        parent::__construct($registry, Users::class);
+-    }
+-
+-    // /**
+-    //  * @return Users[] Returns an array of Users objects
+-    //  */
+-    /*
+-    public function findByExampleField($value)
+-    {
+-        return $this->createQueryBuilder('u')
+-            ->andWhere('u.exampleField = :val')
+-            ->setParameter('val', $value)
+-            ->orderBy('u.id', 'ASC')
+-            ->setMaxResults(10)
+-            ->getQuery()
+-            ->getResult()
+-        ;
+-    }
+-    */
+-
+-    /*
+-    public function findOneBySomeField($value): ?Users
+-    {
+-        return $this->createQueryBuilder('u')
+-            ->andWhere('u.exampleField = :val')
+-            ->setParameter('val', $value)
+-            ->getQuery()
+-            ->getOneOrNullResult()
+-        ;
+-    }
+-    */
+-}

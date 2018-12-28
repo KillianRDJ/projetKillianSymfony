@@ -1,0 +1,30 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Nouveau genre{% endblock %}
+
+{% block body %}
+    <main class="main">
+        <ol class="breadcrumb">
+        </ol>
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fa fa-align-justify"></i>Crée un nouveau genre</div>
+                        <div class="card-body">
+                            {{ include('admin/genre/_form.html.twig') }}
+                            <a href="{{ path('admin.genre.index') }}">Revenir à la liste</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+{% endblock %}

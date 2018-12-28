@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Cocur\Slugify\Slugify;
 
@@ -22,15 +24,6 @@ class Films
      */
     private $name;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $genre;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $realisateur;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -41,11 +34,6 @@ class Films
      * @ORM\Column(type="date")
      */
     private $date_sortie;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $acteurs;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -71,6 +59,38 @@ class Films
      * @ORM\Column(type="integer", length=1)
      */
     private $limitation;
+
+    /**
+     * @ORM\Column(type="string", length=1500)
+     */
+    private $url_ba;
+
+    /**
+     * @ORM\Column(type="string", length=1000)
+     */
+    private $url_pochette;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Genre", inversedBy="films")
+     */
+    private $genres;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Acteur", inversedBy="films")
+     */
+    private $acteurs;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Realisateur", inversedBy="films")
+     */
+    private $realisateurs;
+
+    public function __construct()
+    {
+        $this->genres = new ArrayCollection();
+        $this->acteurs = new ArrayCollection();
+        $this->realisateurs = new ArrayCollection();
+    }
 
     /**
      * @return mixed
@@ -138,29 +158,6 @@ class Films
         return $this;
     }
 
-    public function getGenre(): ?string
-    {
-        return $this->genre;
-    }
-
-    public function setGenre(string $genre): self
-    {
-        $this->genre = $genre;
-
-        return $this;
-    }
-
-    public function getRealisateur(): ?string
-    {
-        return $this->realisateur;
-    }
-
-    public function setRealisateur(string $realisateur): self
-    {
-        $this->realisateur = $realisateur;
-
-        return $this;
-    }
 
     public function getTimeFilm(): ?string
     {
@@ -186,17 +183,6 @@ class Films
         return $this;
     }
 
-    public function getActeurs(): ?string
-    {
-        return $this->acteurs;
-    }
-
-    public function setActeurs(string $acteurs): self
-    {
-        $this->acteurs = $acteurs;
-
-        return $this;
-    }
 
     public function getNotesAllocine(): ?string
     {
@@ -226,4 +212,113 @@ class Films
        return (new Slugify())->slugify($this->name);
 
     }
+
+    public function getUrlBa(): ?string
+    {
+        return $this->url_ba;
+    }
+
+    public function setUrlBa(string $url_ba): self
+    {
+        $this->url_ba = $url_ba;
+
+        return $this;
+    }
+
+    public function getUrlPochette(): ?string
+    {
+        return $this->url_pochette;
+    }
+
+    public function setUrlPochette(string $url_pochette): self
+    {
+        $this->url_pochette = $url_pochette;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Genre[]
+     */
+    public function getGenres(): Collection
+    {
+        return $this->genres;
+    }
+
+    public function addGenre(Genre $genre): self
+    {
+        if (!$this->genres->contains($genre)) {
+            $this->genres[] = $genre;
+            $genre->addFilm($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGenre(Genre $genre): self
+    {
+        if ($this->genres->contains($genre)) {
+            $this->genres->removeElement($genre);
+            $genre->removeFilm($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Acteur[]
+     */
+    public function getActeurs(): Collection
+    {
+        return $this->acteurs;
+    }
+
+    public function addActeur(Acteur $acteur): self
+    {
+        if (!$this->acteurs->contains($acteur)) {
+            $this->acteurs[] = $acteur;
+            $acteur->addFilm($this);
+        }
+
+        return $this;
+    }
+
+    public function removeActeur(Acteur $acteur): self
+    {
+        if ($this->acteurs->contains($acteur)) {
+            $this->acteurs->removeElement($acteur);
+            $acteur->removeFilm($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Realisateur[]
+     */
+    public function getRealisateurs(): Collection
+    {
+        return $this->realisateurs;
+    }
+
+    public function addRealisateur(Realisateur $realisateur): self
+    {
+        if (!$this->realisateurs->contains($realisateur)) {
+            $this->realisateurs[] = $realisateur;
+            $realisateur->addFilm($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRealisateur(Realisateur $realisateur): self
+    {
+        if ($this->realisateurs->contains($realisateur)) {
+            $this->realisateurs->removeElement($realisateur);
+            $realisateur->removeFilm($this);
+        }
+
+        return $this;
+    }
+
 }

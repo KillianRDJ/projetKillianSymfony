@@ -1,0 +1,54 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Genre index{% endblock %}
+
+{% block body %}
+<main class="main">
+    <ol class="breadcrumb">
+    </ol>
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa fa-align-justify"></i> Tous les films</div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for genre in genres %}
+                            <tr>
+                                <td>{{ genre.id }}</td>
+                                <td>{{ genre.name }}</td>
+                                <td>
+                                    <span class="badge badge-warning"><a href="{{ path('admin.genre.edit', {'id': genre.id}) }}">edit</a></span>
+                                    <span class="badge badge-danger"><a href="{{ path('admin.genre.delete', {'id': genre.id}) }}">delete</a></span>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="3">no records found</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <a class="btn btn-primary float-right" href="{{ path('admin.genre.new') }}">Create new</a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</main>
+{% endblock %}

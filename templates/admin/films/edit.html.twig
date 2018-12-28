@@ -1,0 +1,107 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %} Editer le films | ADMIN {% endblock %}
+
+{% block body %}
+    <main class="main">
+        <ol class="breadcrumb">
+
+        </ol>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fa fa-align-justify"></i> Editer le film</div>
+                        <div class="card-body">
+                            {{  include ('admin/form/films/_form.html.twig', {form: form, button: 'Editer le film'}) }}
+                        </div>
+                    </div>
+                </div>
+                {% if linkvideo %}
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fa fa-align-justify"></i> Liste des vidéos</div>
+                        <div class="card-body">
+                            <table class="table table-responsive-sm table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>url</th>
+                                    <th>player</th>
+                                    <th>version</th>
+                                    <th>action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    {% for video in linkvideo %}
+                                        <tr>
+                                            <td>{{ video.id }}</td>
+                                            <td>{{ video.url }}</td>
+                                            <td>{{ video.player }}</td>
+                                            <td>{{ video.version }}</td>
+                                            <td>
+                                                <span class="badge badge-warning"><a href="{{ path('admin.films.edit', {id: films.id}) }}">Editer</a></span>
+                                                <span class="badge badge-danger"><a href="{{ path('admin.films.delete', {id: films.id}) }}">Supprimer</a></span>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css">
+    <style>
+        .select2 {
+            width: 100% !important;
+        }
+        .hidden{
+            display:none;
+        }
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
+    <script>
+        $('select#films_genres').select2();
+        $('select#films_acteurs').select2();
+        $('select#films_realisateurs').select2();
+
+        $('#NeedInfo').click(function() {
+            console.log('ok');
+            var title = $('#films_name').val();
+
+            $.ajax({
+                url: "http://www.omdbapi.com/",
+                method: "GET",
+                data: { apikey : 'b52996e', t : title, },
+                dataType: "json"
+            })
+            .done(function(res) {
+                if(res.Error){
+                   alert(res.Error);
+                }else{
+                    $('.Actors').text(res.Actors);
+                    $('.Director').text(res.Director);
+                    $('.Genre').text(res.Genre);
+                    $('.Runtime').text(res.Runtime);
+                    $('.Released').text(res.Released);
+                    $('.Poster').attr('href', res.Poster);
+
+                    $('.hidden').show();
+                }
+
+                console.log(res);
+            });
+        });
+    </script>
+{% endblock %}

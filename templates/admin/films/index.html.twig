@@ -1,0 +1,52 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %} Gestions des films | ADMIN {% endblock %}
+
+{% block body %}
+    <main class="main">
+        <ol class="breadcrumb">
+            {{ dump(allfilms) }}
+        </ol>
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fa fa-align-justify"></i> Tous les films</div>
+                        <div class="card-body">
+                            <table class="table table-responsive-sm table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Nom du film</th>
+                                    <th>Realisateurs</th>
+                                    <th>Genres</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for films in allfilms %}
+                                    <tr>
+                                        <td>{{ films.name }}</td>
+                                        <td>Realisateurs</td>
+                                        <td>Genres</td>
+                                        <td>
+                                            <span class="badge badge-warning"><a href="{{ path('admin.films.edit', {id: films.id}) }}">Editer</a></span>
+                                            <span class="badge badge-danger"><a href="{{ path('admin.films.delete', {id: films.id}) }}">Supprimer</a></span>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                            <a class="btn btn-block btn-success float-right" href="{{ path('admin.films.new') }}">Nouveau film</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

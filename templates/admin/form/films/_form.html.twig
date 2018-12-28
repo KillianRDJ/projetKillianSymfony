@@ -1,0 +1,39 @@
+
+{{ form_start(form) }}
+<div class="row">
+    <div class="col-lg-8">
+        <div class="row">
+            <div class="col-lg-6">{{ form_row(form.name) }}</div>
+            <div class="col-lg-6">{{ form_row(form.url_pochette) }}</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">{{ form_row(form.description) }}</div>
+        </div>
+        <div class="row hidden">
+            <p class="col-lg-12">Information de films supplémentaire</p>
+                <div class="col-lg-6">Acteurs : <span class="Actors"></span></div>
+                <div class="col-lg-6">Realisateur : <span class="Director"></span></div>
+                <div class="col-lg-6">Genre : <span class="Genre"></span></div>
+                <div class="col-lg-6">Pochette : <a class="Poster">Cliquez ici</a></div>
+                <div class="col-lg-6">Durée : <span class="Runtime"></span></div>
+                <div class="col-lg-6">Dates sortie : <span class="Released"></span></div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="row">
+            <div class="col-lg-12">{{ form_row(form.genres) }}</div>
+            <div class="col-lg-12">{{ form_row(form.realisateurs    ) }}</div>
+            <div class="col-lg-12">{{ form_row(form.acteurs) }}</div>
+            <div class="col-lg-6">{{ form_row(form.date_sortie) }}</div>
+            <div class="col-lg-6">{{ form_row(form.time_film) }}</div>
+            <div class="col-lg-6">{{ form_row(form.notes) }}</div>
+            <div class="col-lg-6">{{ form_row(form.notes_allocine) }}</div>
+            <div class="col-lg-6">{{ form_row(form.nationalite) }}</div>
+            <div class="col-lg-6">{{ form_row(form.limitation) }}</div>
+            <div class="col-lg-12">{{ form_row(form.url_ba) }}</div>
+        </div>
+    </div>
+</div>
+<button class="btn btn-primary">{{ button|default('Enregistrer ') }}</button>
+<a id="NeedInfo" class="btn btn-dark">Plus d'info sur le film</a>
+{{ form_end(form) }}

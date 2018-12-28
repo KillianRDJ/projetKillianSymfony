@@ -1,0 +1,92 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Nouveau lien de vidéo{% endblock %}
+
+{% block body %}
+    <main class="main">
+        <ol class="breadcrumb">
+        </ol>
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fa fa-align-justify"></i>Crée un nouveau lien de vidéo</div>
+                        <div class="card-body">
+                            {{ include('admin/link_asset/_form.html.twig') }}
+                            <a href="{{ path('admin.linkvideo.index') }}">Revenir à la liste</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fa fa-align-justify"></i>Linker la vidéo</div>
+                        <div class="card-body">
+                            {{ include('admin/link_asset/_formAjax.html.twig') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+{% endblock %}
+{% block javascripts %}
+
+    <script>
+        $("#nameAsset").keypress(function() {
+            if($(this).val().length > 1) {
+                var val = $(this).val();
+                $.ajax({
+                    url: "http://127.0.0.1:8000/admin/films/search/"+val+"",
+                    method: "GET",
+                    dataType: "json"
+                })
+                .done(function(res) {
+                    if(res && res.length){
+                        if($( "p" ).hasClass( "remove" )){
+                            $('.remove').remove();
+                        }
+                        $.each(res, function(idx, obj) {
+                            $('.custom-select-films div').remove();
+                            $("<div data-filmid='"+obj.id+"'> <img src='"+obj.url_pochette+"'> <span>"+obj.name+"</span> </div>").insertAfter('.custom-select-films h5');
+                            $('.custom-select-films').show();
+                        });
+                        linkeFilm();
+                        console.log(res);
+                    }else{
+                        $('.custom-select-films').hide();
+                        if(!$( "p" ).hasClass( "remove" )){
+                            $("<p class='remove' style='margin-top:10px'>Pas de films avec cette recherche</p>").insertAfter('#nameAsset');
+                        }
+                    }
+                });
+            } else {
+                console.log('pas ok');
+            }
+        });
+        function linkeFilm(){
+            $('.custom-select-films div').click(function (){
+                var filmsid = $(this).data('filmid');
+                console.log(this);
+
+
+                $('#link_asset1_idAsset').val(filmsid);
+                $('#link_asset1_idAsset').attr('value', filmsid);
+                $('.film-link img').attr('src', $(this).find('img').attr('src'));
+                $('.film-link span').text($(this).find('span').text());
+
+                $('.film-link').show();
+                $('.custom-select-films').hide();
+                $('.form-search-admin').hide();
+            });
+        }
+
+    </script>
+{% endblock %}

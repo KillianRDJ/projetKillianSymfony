@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://coreui.io/demo/vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="https://coreui.io/demo/vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="https://coreui.io/demo/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://coreui.io/demo/vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <link href="https://coreui.io/demo/css/style.css" rel="stylesheet">
+
+    <link href="https://coreui.io/demo/vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+    {% block stylesheets %}{% endblock %}
+</head>
+<body class="app header-fixed sidebar-md-show sidebar-fixed">
+<header class="app-header navbar">
+    <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="https://coreui.io">
+        <img src="https://coreui.io/docs/assets/brand/logo.svg" width="89" height="25" alt="CoreUI Logo">
+    </a>
+    <ul class="nav navbar-nav mr-auto d-md-down-none">
+        <li class="nav-item px-3">
+            <a class="nav-link" href="https://coreui.io/">CoreUI Website</a>
+        </li>
+        <li class="nav-item px-3">
+            <a class="nav-link" href="https://coreui.io/icons/">CoreUI Icons</a>
+        </li>
+        <li class="nav-item px-3">
+            <a class="btn btn-warning" href="https://coreui.io/pro/">Go Pro</a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item px-3">
+            <a class="btn btn btn-outline-warning" href="https://coreui.io/support/">Contact &amp; Support</a>
+        </li>
+    </ul>
+</header>
+<div class="app-body">
+    <div class="sidebar">
+        <nav class="sidebar-nav ps">
+            <ul class="nav">
+                <li class="nav-item  nav-dropdown  ">
+                    <a class="nav-link  nav-dropdown-toggle " href="#">
+                        Films
+                    </a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{ path('admin.films.index') }}">
+                                Tout les films
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{ path('admin.acteur.index') }}">
+                                Tout les acteurs
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{ path('admin.genre.index') }}">
+                                Tout les genres
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{ path('admin.realisateur.index') }}">
+                                Tout les realisateurs
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item  nav-dropdown  ">
+                    <a class="nav-link  nav-dropdown-toggle " href="#">
+                        Liens de vidéos de films
+                    </a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{ path('admin.linkvideo.index') }}">
+                                Tout les liens
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+    </div>
+    {% block body %}
+    {% endblock %}
+</div>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.min.js"></script>
+{% block javascripts %}{% endblock %}
+</body>
+
+</html>

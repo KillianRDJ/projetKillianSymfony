@@ -1,0 +1,72 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %} Ajouter un films | ADMIN {% endblock %}
+
+{% block body %}
+    <main class="main">
+        <ol class="breadcrumb">
+
+        </ol>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fa fa-align-justify"></i> Ajouter un nouveau film</div>
+                        <div class="card-body">
+                            {{  include ('admin/form/films/_form.html.twig', {form: form, button: 'Ajouter le film'}) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css">
+    <style>
+        .select2 {
+            width: 100% !important;
+        }
+        .hidden{
+            display:none;
+        }
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
+    <script>
+        $('select#films_genres').select2();
+        $('select#films_acteurs').select2();
+        $('select#films_realisateurs').select2();
+
+        $('#NeedInfo').click(function() {
+            console.log('ok');
+            var title = $('#films_name').val();
+
+            $.ajax({
+                url: "http://www.omdbapi.com/",
+                method: "GET",
+                data: { apikey : 'b52996e', t : title, },
+                dataType: "json"
+            })
+                .done(function(res) {
+                    if(res.Error){
+                        alert(res.Error);
+                    }else{
+                        $('.Actors').text(res.Actors);
+                        $('.Director').text(res.Director);
+                        $('.Genre').text(res.Genre);
+                        $('.Runtime').text(res.Runtime);
+                        $('.Released').text(res.Released);
+                        $('.Poster').attr('href', res.Poster);
+
+                        $('.hidden').show();
+                    }
+
+                    console.log(res);
+                });
+        });
+    </script>
+{% endblock %}

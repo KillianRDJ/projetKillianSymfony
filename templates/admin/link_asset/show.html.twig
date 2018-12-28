@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LinkAsset{% endblock %}
+
+{% block body %}
+    <h1>LinkAsset</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ link_asset.id }}</td>
+            </tr>
+            <tr>
+                <th>Url</th>
+                <td>{{ link_asset.url }}</td>
+            </tr>
+            <tr>
+                <th>IdAsset</th>
+                <td>{{ link_asset.idAsset }}</td>
+            </tr>
+            <tr>
+                <th>Player</th>
+                <td>{{ link_asset.player }}</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>{{ link_asset.version }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ link_asset.type }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('link_asset_index') }}">back to list</a>
+
+    <a href="{{ path('link_asset_edit', {'id': link_asset.id}) }}">edit</a>
+
+    {{ include('link_asset/_delete_form.html.twig') }}
+{% endblock %}

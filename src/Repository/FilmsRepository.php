@@ -19,6 +19,28 @@ class FilmsRepository extends ServiceEntityRepository
         parent::__construct($registry, Films::class);
     }
 
+    /**
+     * @param $value
+     * @return Films[] Returns an array of Films objects
+     */
+    public function getFilmByNameLike($value){
+        return $this->createQueryBuilder('l')
+            ->andWhere('l.name LIKE :val')
+            ->setParameter('val', "%{$value}%")
+            ->getQuery()
+            ->getArrayResult()
+            ;
+    }
+    public function getFilmByIdJson($value){
+        return $this->createQueryBuilder('l')
+            ->andWhere('l.id = :val')
+            ->setParameter('val', "$value")
+            ->getQuery()
+            ->getArrayResult()
+            ;
+    }
+
+
     // /**
     //  * @return Films[] Returns an array of Films objects
     //  */

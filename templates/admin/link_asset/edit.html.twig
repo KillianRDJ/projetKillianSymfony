@@ -1,0 +1,57 @@
+{% extends 'admin/base.html.twig' %}
+{% block title %}Edit un lien de vidéo{% endblock %}
+
+{% block body %}
+    <main class="main">
+        <ol class="breadcrumb">
+        </ol>
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fa fa-align-justify"></i>Editer un lien de vidéo</div>
+                        <div class="card-body">
+                            {{ include('admin/link_asset/_form.html.twig', {'button_label': 'Update'}) }}
+
+                            <a href="{{ path('admin.linkvideo.index') }}">back to list</a>
+                            {{ include('admin/link_asset/_delete_form.html.twig') }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fa fa-align-justify"></i>Linker la vidéo</div>
+                        <div class="card-body">
+                            {{ include('admin/link_asset/_formAjax.html.twig') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+{% endblock %}
+{% block javascripts %}
+
+<script>
+    var val = $('#link_asset1_idAsset').val();
+    $.ajax({
+        url: "http://127.0.0.1:8000/admin/films/searchid/"+val+"",
+        method: "GET",
+        dataType: "json"
+    })
+        .done(function(res) {
+            console.log(res);
+            $('.film-link img').attr('src', res[0].url_pochette);
+            $('.film-link span').text(res[0].name);
+            $('.film-link').show();
+        });
+</script>
+{% endblock %}
