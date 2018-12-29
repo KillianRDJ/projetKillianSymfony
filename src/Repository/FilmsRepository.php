@@ -39,6 +39,24 @@ class FilmsRepository extends ServiceEntityRepository
             ->getArrayResult()
             ;
     }
+    public function getFilmBlockbuster(){
+        return $this->createQueryBuilder('l')
+            ->andWhere('l.blockbuster = :val')
+            ->setParameter('val', "1")
+            //->orderBy('RAND()')
+            ->setMaxResults(6)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+    public function getFilmsRandom(){
+        return $this->createQueryBuilder('l')
+            //->orderBy('RAND()')
+            ->setMaxResults(5)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 
 
     // /**

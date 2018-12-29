@@ -3,141 +3,37 @@
 {% block title %}Hello {{ controller_name }}!{% endblock %}
 
 {% block body %}
+    {{ dump(allFilmsBlockbuster) }}
     <div class="hero-area" xmlns="http://www.w3.org/1999/html">
         <div class="container">
             <div class="row">
                 <div class="col-12" >
-                    <h3 class="text-center">Les films les plus vues</h3>
+                    <h3 class="text-center">Les blockbusters</h3>
                     <div class="hero-slides row">
                         <!-- Single Blog Post -->
-                        <div class="single-blog-post col-2">
-                            <div class="post-thumb">
-                                <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                            </div>
-                            <div class="text-center margin-top-10">
-                                <a href="{{  path('films.show', {id: 1, slug: 'forrest-gump' }) }}" class="post-title">
-                                    <h6 class="no-margin-bottom">Transformers 1</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-date no-margin-bottom"><i class="fa fa-eye"></i> 1597 </br>
-                                    <div class="avis-etoile">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                        {% for getBlockbuster in allFilmsBlockbuster %}
+                            <div class="single-blog-post col-2">
+                                <div class="post-thumb">
+                                    <a href="{{  path('films.show', {id: getBlockbuster.id , slug: getBlockbuster.slug }) }}"><img src="{{ getBlockbuster.urlPochette }}" alt="{{ getBlockbuster.name }}"></a>
+                                </div>
+                                <div class="text-center margin-top-10">
+                                    <a href="{{  path('films.show', {id: getBlockbuster.id , slug: getBlockbuster.slug }) }}" class="post-title">
+                                        <h6 class="no-margin-bottom">{{ getBlockbuster.name }}</h6>
+                                    </a>
+                                    <div class="post-meta">
+                                        <p class="post-date no-margin-bottom"><i class="fa fa-eye"></i> {{ getBlockbuster.nbrevues }} </br>
+                                        <div class="avis-etoile">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                        </div>
+                                        </p>
                                     </div>
-                                    </p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="single-blog-post col-2">
-                            <div class="post-thumb">
-                                <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                            </div>
-                            <div class="text-center margin-top-10">
-                                <a href="#" class="post-title">
-                                    <h6 class="no-margin-bottom">Transformers 1</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-date no-margin-bottom"><i class="fa fa-eye"></i> 1597 </br>
-                                    <div class="avis-etoile">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                                    </div>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-blog-post col-2">
-                            <div class="post-thumb">
-                                <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                            </div>
-                            <div class="text-center margin-top-10">
-                                <a href="#" class="post-title">
-                                    <h6 class="no-margin-bottom">Transformers 1</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-date no-margin-bottom"><i class="fa fa-eye"></i> 1597 </br>
-                                    <div class="avis-etoile">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                                    </div>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-blog-post col-2">
-                            <div class="post-thumb">
-                                <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                            </div>
-                            <div class="text-center margin-top-10">
-                                <a href="#" class="post-title">
-                                    <h6 class="no-margin-bottom">Transformers 1</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-date no-margin-bottom"><i class="fa fa-eye"></i> 1597 </br>
-                                    <div class="avis-etoile">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                                    </div>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Blog Post -->
-                        <div class="single-blog-post col-2">
-                            <div class="post-thumb">
-                                <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                            </div>
-                            <div class="text-center margin-top-10">
-                                <a href="#" class="post-title">
-                                    <h6 class="no-margin-bottom">Transformers 1</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-date no-margin-bottom"><i class="fa fa-eye"></i> 1597 </br>
-                                    <div class="avis-etoile">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                                    </div>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="single-blog-post col-2">
-                            <div class="post-thumb">
-                                <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                            </div>
-                            <div class="text-center margin-top-10">
-                                <a href="#" class="post-title">
-                                    <h6 class="no-margin-bottom">Transformers 1</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-date no-margin-bottom"><i class="fa fa-eye"></i> 1597 </br>
-                                    <div class="avis-etoile">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                                    </div>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
 
@@ -150,168 +46,28 @@
                 <!-- Blog Posts Area -->
                 <div class="col-12 col-lg-8">
                     <div class="row">
-                        <div class="col-4 col-lg-4">
-                            <div class="single-blog-post style-3">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                   <span class="post-catagory cat-black">Fanstatique</span> <span class="post-catagory cat-black">Action</span>
-                                    <a href="#" class="post-title">
-                                        <h6>Transformers: Revenge of the Fallen</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">Par <a href="#">Michael Bay</a></p>
+                        {% for filmrandom in filmRandoms %}
+                            <div class="col-4 col-lg-4">
+                                <div class="single-blog-post style-3">
+                                    <!-- Post Thumb -->
+                                    <div class="post-thumb">
+                                        <a href="{{  path('films.show', {id: filmrandom.id , slug: filmrandom.slug }) }}"><img class="border-films" src="{{ filmrandom.urlPochette }}" alt="{{ filmrandom.name }}"></a>
+                                    </div>
+                                    <!-- Post Data -->
+                                    <div class="post-data">
+                                        {% for genre in filmrandom.getgenres %}
+                                            <span class="post-catagory cat-black">{{ genre.name }}</span>
+                                        {% endfor %}
+                                        <a href="{{  path('films.show', {id: filmrandom.id , slug: filmrandom.slug }) }}" class="post-title">
+                                            <h6>{{ filmrandom.name }}</h6>
+                                        </a>
+                                        <div class="post-meta">
+                                            <p class="post-author">Par {% for realisateur in filmrandom.getrealisateurs %}<a href="{{ realisateur.id }}"> {{ realisateur.name  }} </a> {% endfor %}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-4 col-lg-4">
-                            <div class="single-blog-post style-3">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <span class="post-catagory cat-black">Fanstatique</span> <span class="post-catagory cat-black">Action</span>
-                                    <a href="#" class="post-title">
-                                        <h6>Transformers: Revenge of the Fallen</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">Par <a href="#">Michael Bay</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-lg-4">
-                            <div class="single-blog-post style-3">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <span class="post-catagory cat-black">Fanstatique</span> <span class="post-catagory cat-black">Action</span>
-                                    <a href="#" class="post-title">
-                                        <h6>Transformers: Revenge of the Fallen</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">Par <a href="#">Michael Bay</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-lg-4">
-                            <div class="single-blog-post style-3">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img class="border-films" src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <span class="post-catagory cat-black">Fanstatique</span> <span class="post-catagory cat-black">Action</span>
-                                    <a href="#" class="post-title">
-                                        <h6>Transformers: Revenge of the Fallen</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">Par <a href="#">Michael Bay</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-lg-4">
-                            <div class="single-blog-post style-3">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img class="border-series" src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <span class="post-catagory cat-black">Fanstatique</span> <span class="post-catagory cat-black">Action</span>
-                                    <a href="#" class="post-title">
-                                        <h6>Transformers: Revenge of the Fallen</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">Par <a href="#">Michael Bay</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-lg-4">
-                            <div class="single-blog-post style-3">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img class="border-films" src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <span class="post-catagory cat-black">Fanstatique</span> <span class="post-catagory cat-black">Action</span>
-                                    <a href="#" class="post-title">
-                                        <h6>Transformers: Revenge of the Fallen</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">Par <a href="#">Michael Bay</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-lg-4">
-                            <div class="single-blog-post style-3">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img class="border-animes" src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <span class="post-catagory cat-black">Fanstatique</span> <span class="post-catagory cat-black">Action</span>
-                                    <a href="#" class="post-title">
-                                        <h6>Transformers: Revenge of the Fallen</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">Par <a href="#">Michael Bay</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-lg-4">
-                            <div class="single-blog-post style-3">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img class="border-films" src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <span class="post-catagory cat-black">Fanstatique</span> <span class="post-catagory cat-black">Action</span>
-                                    <a href="#" class="post-title">
-                                        <h6>Transformers: Revenge of the Fallen</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">Par <a href="#">Michael Bay</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-lg-4">
-                            <div class="single-blog-post style-3">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <span class="post-catagory cat-black">Fanstatique</span> <span class="post-catagory cat-black">Action</span>
-                                    <a href="#" class="post-title">
-                                        <h6>Transformers: Revenge of the Fallen</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">Par <a href="#">Michael Bay</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
 
 

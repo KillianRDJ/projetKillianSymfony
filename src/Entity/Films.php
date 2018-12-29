@@ -71,9 +71,20 @@ class Films
     private $url_pochette;
 
     /**
+     * @ORM\Column(type="integer", length=12)
+     */
+    private $nbrevues;
+
+    /**
+     * @ORM\Column(type="integer", length=12)
+     */
+    private $blockbuster;
+
+    /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Genre", inversedBy="films")
      */
     private $genres;
+
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Acteur", inversedBy="films")
@@ -84,6 +95,11 @@ class Films
      * @ORM\ManyToMany(targetEntity="App\Entity\Realisateur", inversedBy="films")
      */
     private $realisateurs;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $created_at;
 
     public function __construct()
     {
@@ -150,7 +166,6 @@ class Films
         return $this->name;
     }
 
-
     public function setName(string $name): self
     {
         $this->name = $name;
@@ -163,6 +178,7 @@ class Films
     {
         return $this->time_film;
     }
+
 
     public function setTimeFilm(string $time_film): self
     {
@@ -183,11 +199,11 @@ class Films
         return $this;
     }
 
-
     public function getNotesAllocine(): ?string
     {
         return $this->notes_allocine;
     }
+
 
     public function setNotesAllocine(string $notes_allocine): self
     {
@@ -207,12 +223,12 @@ class Films
 
         return $this;
     }
+
     public function getSlug() :string
     {
        return (new Slugify())->slugify($this->name);
 
     }
-
     public function getUrlBa(): ?string
     {
         return $this->url_ba;
@@ -317,6 +333,49 @@ class Films
             $this->realisateurs->removeElement($realisateur);
             $realisateur->removeFilm($this);
         }
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNbrevues()
+    {
+        return $this->nbrevues;
+    }
+    /**
+     * @param mixed $nbrevues
+     */
+    public function setNbrevues($nbrevues): void
+    {
+        $this->nbrevues = $nbrevues;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBlockbuster()
+    {
+        return $this->blockbuster;
+    }
+
+    /**
+     * @param mixed $blockbuster
+     */
+    public function setBlockbuster($blockbuster): void
+    {
+        $this->blockbuster = $blockbuster;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $created_at): self
+    {
+        $this->created_at = $created_at;
 
         return $this;
     }

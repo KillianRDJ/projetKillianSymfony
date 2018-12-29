@@ -20,13 +20,13 @@
                                     <h1 class="no-margin-bottom">{{ allFilms.name }}</h1> <span>Date de sortie : {{ allFilms.DateSortie|date('d-m-Y') }}</span>
                                 </div>
                                 <div class="col-6">
-                                    <p>Réalisateur : {{ allFilms.realisateur }}</p>
+                                    <p>Réalisateur : {% for realisateurs in allFilms.realisateurs %} {{ realisateurs.name }} {% endfor %}</p>
                                 </div>
                                 <div class="col-6">
-                                    <p>Acteurs : {{ allFilms.acteurs }}
+                                    <p>Acteurs : {% for acteurs in allFilms.acteurs %} {{ acteurs.name }} {% endfor %}</p>
                                 </div>
                                 <div class="col-6">
-                                    <p>Genre : {{ allFilms.genre }}
+                                    <p>Genre : {% for genres in allFilms.genres %} {{ genres.name }} {% endfor %} </p>
                                 </div>
                                 <div class="col-6">
                                     <p>Pays : {{ allFilms.nationalite }}
@@ -38,7 +38,7 @@
                                     <h3>Sypnosis du film</h3>
                                     <p> {{ allFilms.description }} </p>
                                     {% if allFilms.urlBa is not empty %}
-                                        <div id="Bafilm"><a href="{{ allFilms.urlBa }}">Voir la bande annonce</a></div>
+                                        <div id="Bafilm"><a target="_blank" href="{{ allFilms.urlBa }}">Voir la bande annonce</a></div>
                                     {%  endif %}
                                 </div>
                             </div>
@@ -74,204 +74,8 @@
                         </p>
                     </video>
                     <script src="https://vjs.zencdn.net/7.3.0/video.js"></script>
-                {% endif %}
-            </div>
-            <div class="col-12 margin-top-10">
-                <p>Tags : <b>films streaming</b></p>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-12">
-                <h5 class="text-center margin-bottom-10">Films similiare</h5>
-            </div>
-            <div class="single-blog-post col-2">
-                <div class="post-thumb">
-                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                </div>
-                <div class="text-center margin-top-10">
-                    <a href="{{  path('films.show', {id: 1, slug: 'forrest-gump' }) }}" class="post-title">
-                        <h6 class="no-margin-bottom">Transformers 1</h6>
-                    </a>
-                </div>
-            </div>
-            <div class="single-blog-post col-2">
-                <div class="post-thumb">
-                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                </div>
-                <div class="text-center margin-top-10">
-                    <a href="{{  path('films.show', {id: 1, slug: 'forrest-gump' }) }}" class="post-title">
-                        <h6 class="no-margin-bottom">Transformers 1</h6>
-                    </a>
-                </div>
-            </div>
-            <div class="single-blog-post col-2">
-                <div class="post-thumb">
-                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                </div>
-                <div class="text-center margin-top-10">
-                    <a href="{{  path('films.show', {id: 1, slug: 'forrest-gump' }) }}" class="post-title">
-                        <h6 class="no-margin-bottom">Transformers 1</h6>
-                    </a>
-                </div>
-            </div>
-            <div class="single-blog-post col-2">
-                <div class="post-thumb">
-                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                </div>
-                <div class="text-center margin-top-10">
-                    <a href="{{  path('films.show', {id: 1, slug: 'forrest-gump' }) }}" class="post-title">
-                        <h6 class="no-margin-bottom">Transformers 1</h6>
-                    </a>
-                </div>
-            </div>
-            <div class="single-blog-post col-2">
-                <div class="post-thumb">
-                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                </div>
-                <div class="text-center margin-top-10">
-                    <a href="{{  path('films.show', {id: 1, slug: 'forrest-gump' }) }}" class="post-title">
-                        <h6 class="no-margin-bottom">Transformers 1</h6>
-                    </a>
-                </div>
-            </div>
-            <div class="single-blog-post col-2">
-                <div class="post-thumb">
-                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                </div>
-                <div class="text-center margin-top-10">
-                    <a href="{{  path('films.show', {id: 1, slug: 'forrest-gump' }) }}" class="post-title">
-                        <h6 class="no-margin-bottom">Transformers 1</h6>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container margin-top-10 margin-bottom-10">
-        <div class="row">
-            <div class="col-12">
-                <h3 class="text-center">Voir le film {{ allFilms.name }} en streaming</h3>
-            </div>
-            <div class="col-3">
-                <ul class="listePlayers">
-                    {% for getLinkPlayer in getAllPlayerById %}
-                        <li><span>{{ getLinkPlayer.player (getLinkPlayer.version) }}</span> <a href="{{ path('linkfilms.show', {id: allFilms.id, slug: allFilms.slug, idLink: getLinkPlayer.id }) }}"> Voir le film </a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <div class="col-9">
-                {% if app.request.attributes.get('_route') == 'linkfilms.show' %}
-                    <link href="https://vjs.zencdn.net/7.3.0/video-js.css" rel="stylesheet">
-                    <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
-                    <script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
-                    <video id="my-video" class="video-js" controls preload="auto" width="850" height="auto"
-                           poster="{{ allFilms.urlPochette }}" data-setup="{}">
-                        <source src="{{ getPlayerById.url }}" type='video/mp4'>
-                        <p class="vjs-no-js">
-                            To view this video please enable JavaScript, and consider upgrading to a web browser that
-                            <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                        </p>
-                    </video>
-                    <script src="https://vjs.zencdn.net/7.3.0/video.js"></script>
-                {% endif %}
-            </div>
-            <div class="col-12 margin-top-10">
-                <p>Tags : <b>films streaming</b></p>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-12">
-                <h5 class="text-center margin-bottom-10">Films similiare</h5>
-            </div>
-            <div class="single-blog-post col-2">
-                <div class="post-thumb">
-                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                </div>
-                <div class="text-center margin-top-10">
-                    <a href="{{  path('films.show', {id: 1, slug: 'forrest-gump' }) }}" class="post-title">
-                        <h6 class="no-margin-bottom">Transformers 1</h6>
-                    </a>
-                </div>
-            </div>
-            <div class="single-blog-post col-2">
-                <div class="post-thumb">
-                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                </div>
-                <div class="text-center margin-top-10">
-                    <a href="{{  path('films.show', {id: 1, slug: 'forrest-gump' }) }}" class="post-title">
-                        <h6 class="no-margin-bottom">Transformers 1</h6>
-                    </a>
-                </div>
-            </div>
-            <div class="single-blog-post col-2">
-                <div class="post-thumb">
-                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                </div>
-                <div class="text-center margin-top-10">
-                    <a href="{{  path('films.show', {id: 1, slug: 'forrest-gump' }) }}" class="post-title">
-                        <h6 class="no-margin-bottom">Transformers 1</h6>
-                    </a>
-                </div>
-            </div>
-            <div class="single-blog-post col-2">
-                <div class="post-thumb">
-                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                </div>
-                <div class="text-center margin-top-10">
-                    <a href="{{  path('films.show', {id: 1, slug: 'forrest-gump' }) }}" class="post-title">
-                        <h6 class="no-margin-bottom">Transformers 1</h6>
-                    </a>
-                </div>
-            </div>
-            <div class="single-blog-post col-2">
-                <div class="post-thumb">
-                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                </div>
-                <div class="text-center margin-top-10">
-                    <a href="{{  path('films.show', {id: 1, slug: 'forrest-gump' }) }}" class="post-title">
-                        <h6 class="no-margin-bottom">Transformers 1</h6>
-                    </a>
-                </div>
-            </div>
-            <div class="single-blog-post col-2">
-                <div class="post-thumb">
-                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                </div>
-                <div class="text-center margin-top-10">
-                    <a href="{{  path('films.show', {id: 1, slug: 'forrest-gump' }) }}" class="post-title">
-                        <h6 class="no-margin-bottom">Transformers 1</h6>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container margin-top-10 margin-bottom-10">
-        <div class="row">
-            <div class="col-12">
-                <h3 class="text-center">Voir le film {{ allFilms.name }} en streaming</h3>
-            </div>
-            <div class="col-3">
-                <ul class="listePlayers">
-                    {% for getLinkPlayer in getAllPlayerById %}
-                        <li><span>{{ getLinkPlayer.player (getLinkPlayer.version) }}</span> <a href="{{ path('linkfilms.show', {id: allFilms.id, slug: allFilms.slug, idLink: getLinkPlayer.id }) }}"> Voir le film </a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <div class="col-9">
-                {% if app.request.attributes.get('_route') == 'linkfilms.show' %}
-                    <link href="https://vjs.zencdn.net/7.3.0/video-js.css" rel="stylesheet">
-                    <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
-                    <script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
-                    <video id="my-video" class="video-js" controls preload="auto" width="850" height="auto"
-                           poster="{{ allFilms.urlPochette }}" data-setup="{}">
-                        <source src="{{ getPlayerById.url }}" type='video/mp4'>
-                        <p class="vjs-no-js">
-                            To view this video please enable JavaScript, and consider upgrading to a web browser that
-                            <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                        </p>
-                    </video>
-                    <script src="https://vjs.zencdn.net/7.3.0/video.js"></script>
+                    {% else %}
+                    <p>Désolé, nous n'avons pas de liens de streaming à vous proposer.</p>
                 {% endif %}
             </div>
             <div class="col-12 margin-top-10">

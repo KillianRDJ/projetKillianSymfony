@@ -33,6 +33,7 @@ class FilmsController extends AbstractController
     public function index(): Response
     {
         $allFilms = $this->films->findAll();
+
         return $this->render('films/index.html.twig', [
             'controller_name' => 'FilmsController',
             'allFilms' => $allFilms,
