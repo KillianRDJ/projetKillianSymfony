@@ -28,11 +28,12 @@ class HomeController extends AbstractController
     {
         $allFilmsBlockbuster = $this->films->getFilmBlockbuster();
         $getFilmsRandom = $this->films->getFilmsRandom();
-
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'allFilmsBlockbuster' => $allFilmsBlockbuster,
             'filmRandoms' => $getFilmsRandom,
+
+
         ]);
     }
 }

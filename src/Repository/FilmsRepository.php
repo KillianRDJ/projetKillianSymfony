@@ -57,6 +57,14 @@ class FilmsRepository extends ServiceEntityRepository
             ->getResult()
             ;
     }
+    public function getFilmsSimilaire($value){
+        $rawSql = 'select * from films_genre a JOIN films f ON a.films_id = f.id where a.genre_id IN('.$value.') group by f.id order by RAND() LIMIT 6';
+
+        $stmt = $this->getEntityManager()->getConnection()->prepare($rawSql);
+        $stmt->execute([]);
+
+        return $stmt->fetchAll();
+    }
 
 
     // /**

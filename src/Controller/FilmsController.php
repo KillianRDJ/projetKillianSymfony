@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 class FilmsController extends AbstractController
 {
     /**
@@ -22,6 +23,7 @@ class FilmsController extends AbstractController
     {
         $this->films = $films;
         $this->linkAsset = $linkAsset;
+
 
     }
 
@@ -49,9 +51,24 @@ class FilmsController extends AbstractController
     {
         $filmById = $this->films->find($id);
         $getAllPlayerById = $this->linkAsset->findByIdFilm($id);
+        $getGenre = $filmById->getGenres()->getValues();
+        $i = 1;
+        $result = '';
+        foreach($getGenre as $getGenres){
+            if($i == count($getGenre)){
+                $result .= $getGenres->getId();
+            }else{
+                $result .= $getGenres->getId().',';
+            }
+            $i++;
+        }
+        echo $result;
 
+
+        $getFilmsSimilaire = $this->films->getFilmsSimilaire($result);
 
         return $this->render('films/show.html.twig', [
+            'getFilmsSimilaire' => $getFilmsSimilaire,
             'controller_name' => 'FilmsController',
             'allFilms' => $filmById,
             'getAllPlayerById' => $getAllPlayerById,

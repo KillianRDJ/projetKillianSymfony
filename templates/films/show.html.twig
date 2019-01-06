@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {{ dump(allFilms.genres.values) }}
+    {{ dump(getFilmsSimilaire) }}
     <div class="hero-area" xmlns="http://www.w3.org/1999/html">
         <div class="container">
             <div class="row">
@@ -87,66 +87,18 @@
             <div class="col-12">
                 <h5 class="text-center margin-bottom-10">Films similiare</h5>
             </div>
-            <div class="single-blog-post col-2">
-                <div class="post-thumb">
-                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
+            {% for filmSimilaires in getFilmsSimilaire %}
+                <div class="single-blog-post col-2">
+                    <div class="post-thumb">
+                        <a href="#"><img src="{{ filmSimilaires.url_pochette }}" alt="{{ filmSimilaires.name }}"></a>
+                    </div>
+                    <div class="text-center margin-top-10">
+                        <a href="{{  path('films.show', {id: filmSimilaires.id, slug: filmSimilaires.name|slugfy  }) }}" class="post-title">
+                            <h6 class="no-margin-bottom">{{ filmSimilaires.name }}</h6>
+                        </a>
+                    </div>
                 </div>
-                <div class="text-center margin-top-10">
-                    <a href="{{  path('films.show', {id: 1, slug: 'forrest-gump' }) }}" class="post-title">
-                        <h6 class="no-margin-bottom">Transformers 1</h6>
-                    </a>
-                </div>
-            </div>
-            <div class="single-blog-post col-2">
-                <div class="post-thumb">
-                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                </div>
-                <div class="text-center margin-top-10">
-                    <a href="{{  path('films.show', {id: 1, slug: 'forrest-gump' }) }}" class="post-title">
-                        <h6 class="no-margin-bottom">Transformers 1</h6>
-                    </a>
-                </div>
-            </div>
-            <div class="single-blog-post col-2">
-                <div class="post-thumb">
-                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                </div>
-                <div class="text-center margin-top-10">
-                    <a href="{{  path('films.show', {id: 1, slug: 'forrest-gump' }) }}" class="post-title">
-                        <h6 class="no-margin-bottom">Transformers 1</h6>
-                    </a>
-                </div>
-            </div>
-            <div class="single-blog-post col-2">
-                <div class="post-thumb">
-                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                </div>
-                <div class="text-center margin-top-10">
-                    <a href="{{  path('films.show', {id: 1, slug: 'forrest-gump' }) }}" class="post-title">
-                        <h6 class="no-margin-bottom">Transformers 1</h6>
-                    </a>
-                </div>
-            </div>
-            <div class="single-blog-post col-2">
-                <div class="post-thumb">
-                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                </div>
-                <div class="text-center margin-top-10">
-                    <a href="{{  path('films.show', {id: 1, slug: 'forrest-gump' }) }}" class="post-title">
-                        <h6 class="no-margin-bottom">Transformers 1</h6>
-                    </a>
-                </div>
-            </div>
-            <div class="single-blog-post col-2">
-                <div class="post-thumb">
-                    <a href="#"><img src="https://m.media-amazon.com/images/M/MV5BNDg1NTU2OWEtM2UzYi00ZWRmLWEwMTktZWNjYWQ1NWM1OThjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt=""></a>
-                </div>
-                <div class="text-center margin-top-10">
-                    <a href="{{  path('films.show', {id: 1, slug: 'forrest-gump' }) }}" class="post-title">
-                        <h6 class="no-margin-bottom">Transformers 1</h6>
-                    </a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 
