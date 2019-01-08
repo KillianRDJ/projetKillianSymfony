@@ -50,6 +50,7 @@ class FilmsController extends AbstractController
     public function show($slug, $id): Response
     {
         $filmById = $this->films->find($id);
+        $this->films->setViewFilmsPlus($filmById);
         $getAllPlayerById = $this->linkAsset->findByIdFilm($id);
         $getGenre = $filmById->getGenres()->getValues();
         $i = 1;
@@ -62,8 +63,7 @@ class FilmsController extends AbstractController
             }
             $i++;
         }
-        echo $result;
-
+      
 
         $getFilmsSimilaire = $this->films->getFilmsSimilaire($result);
 

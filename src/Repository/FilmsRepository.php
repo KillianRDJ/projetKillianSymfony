@@ -65,6 +65,15 @@ class FilmsRepository extends ServiceEntityRepository
 
         return $stmt->fetchAll();
     }
+    public function setViewFilmsPlus($films){
+        return $this
+            ->createQueryBuilder('f')
+            ->update($this->getEntityName(), 'f')
+            ->set('f.nbrevues', $films->getNbrevues() + 1)
+            ->where('f.id = :id')->setParameter('id', $films->getId())
+            ->getQuery()
+            ->execute();
+    }
 
 
     // /**
