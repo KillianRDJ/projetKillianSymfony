@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css">
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
@@ -13,12 +14,33 @@
 
         {% include 'footer.html.twig' ignore missing %}
     </body>
-    {% block javascripts %}
-        {{ encore_entry_link_tags('app') }}
-    {% endblock %}
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="{{ asset('build/bootstrap.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('build/popper.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('build/active.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('build/popper.js') }}" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
+    <script>
+        // page index films
+        $('select#films_index_genres').select2();
+        $('select#films_index_acteurs').select2();
+        $('select#films_index_realisateurs').select2();
+
+        $('#test').click(function (e) {
+            e.preventDefault();
+            var datagenre = $('#films_index_genres').val();
+            var dataacteurs = $('#films_index_acteurs').val();
+            var datareal = $('#films_index_realisateurs').val();
+            $(".content div").fadeOut("normal", function() {
+                $(this).remove();
+                console.log('ok');
+            });
+
+            $.ajax({
+                url: "{{ path('films.filter') }}",
+                method: "get",
+                data: { genre : datagenre, acteurs : dataacteurs, real: datareal },
+                dataType: "json",
+            })
+                .done(function(res) {
+                    $('.content').html(res.success);
+                });
+        });
+    </script>
 </html>
