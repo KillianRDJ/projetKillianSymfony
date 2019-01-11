@@ -56,7 +56,9 @@
                                     <!-- Post Data -->
                                     <div class="post-data">
                                         {% for genre in filmrandom.getgenres %}
-                                            <span class="post-catagory cat-black">{{ genre.name }}</span>
+                                            <a href="{{ path('films.showByGenre', {slug: genre.name|slugfy , id: genre.id }) }}">
+                                                <span class="post-catagory cat-black">{{ genre.name }}</span>
+                                            </a>
                                         {% endfor %}
                                         <a href="{{  path('films.show', {id: filmrandom.id , slug: filmrandom.slug }) }}" class="post-title">
                                             <h6>{{ filmrandom.name }}</h6>

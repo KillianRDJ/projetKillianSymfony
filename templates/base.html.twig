@@ -8,7 +8,51 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
+    <style>
+        #popupSearch{
+            background: linear-gradient(to right, #e30a73, #02aeee);
+            width: 50%;
+            height: auto;
+            padding: 20px;
+            grid-auto-columns: 50%;
+            z-index: 99999999999999;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.35);
+            -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+            box-shadow: 5pxpx 10px 5px 0px rgba(0,0,0,0.75);
+            top: -150px;
+            -webkit-transition: top 0.4s ease;
+            -moz-transition: top 0.4s ease;
+            -o-transition: top 0.4s ease;
+            transition: top 0.4s ease;
+        }
+        #popupSearch h3{
+            color: white;
+            text-transform: uppercase;
+        }
+        #popupSearch span.select2-container--default {
+            width: 100% !important;
+            z-index: 9999999999;
+        }
+        #popupSearch span.select2-container--open {
+            z-index: 9999999999;
+        }
+        .select2-dropdown{
+            z-index: 9999999999 !important;
+        }
+        .ajaxSearch{
+            display:none;
+        }
+    </style>
     <body>
+        <div id="popupSearch">
+            <h3>Recherche un film</h3>
+            <select class="ajaxSearch"></select>
+        </div>
         {% include 'menu.html.twig' ignore missing %}
         {% block body %}{% endblock %}
 
@@ -42,5 +86,64 @@
                     $('.content').html(res.success);
                 });
         });
+
+        $('.fa-search').click(function () {
+            $('#popupSearch').css('top', '50px');
+        });
+
+        $(".ajaxSearch").select2({
+            ajax: {
+                url: "/films/search2",
+                method: "get",
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                    };
+                },
+                processResults: function (data, params) {
+                    // parse the results into the format expected by Select2
+                    // since we are using custom formatting functions we do not need to
+                    // alter the remote JSON data, except to indicate that infinite
+                    // scrolling can be used
+                    params.page = params.page || 1;
+
+                    return {
+                        results: data,
+                        pagination: {
+                            more: (params.page * 30) < data.total_count
+                        }
+                    };
+                },
+                cache: true
+            },
+            placeholder: 'Rechercher un film',
+            escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+            minimumInputLength: 3,
+            templateResult: resultSearch,
+            templateSelection: resultSelect
+        });
+        function resultSearch(res, e){
+
+            console.log(res);
+            if(res.loading){
+                return 'Attendez un moment..';
+            }
+
+            var markup = "<div class='select2-result-repository clearfix'>" +
+                "<div class='select2-result-pochette'><img src='" + res.url_pochette + "' </div>"  +
+                "<div class='select2-result-title'>Titre '"+ res.name +"'</div><a href='#'>Voir le film</a>" ;
+            return markup;
+        }
+        function resultSelect(res, e){
+            e.preventDefault();
+        }
+
+
+
+
+
+
     </script>
 </html>

@@ -157,9 +157,19 @@ class FilmsController extends AbstractController
     }
 
     /**
-         * @Route("/films/filter", name="films.filter", )
+     * @Route("/films/search2", name="films.search2")
      * @param Request $request
-     * @param Slugify $slugify
+     * @return Response
+     */
+    public function searchByName2(Request $request){
+        $val = $request->query->get('q');
+        $filmByName = $this->films->getFilmByNameLike($val);
+        return new Response(json_encode($filmByName), 200);
+    }
+
+    /**
+     * @Route("/films/filter", name="films.filter", )
+     * @param Request $request
      * @return Response
      */
     public function searchByFilter(Request $request){

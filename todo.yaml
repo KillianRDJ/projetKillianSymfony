@@ -1,9 +1,14 @@
 #// TODO FRONT:
-  #// Crée la section de recherche sur le site
+
+
   #// Terminer la page de présentation du film
   #// Pour la bande annonce, ouverture d'un popup avec vidéo.js
   #// Crée pagination pour  > 20 film
   #// Lors d'un recherche par genre films.showbyAsset indiquez en mettant : Tout les films dans le genre d'action, Tous les films de (acteurs ou real)
+  #// TOP 10 des films, séries, animés
+  #// Faire un logo simple
+  #// Faire les liens des menu dans le footer
+
 
 #// TODO BACKEND:
   #// Faire un random sur la requete getFilmsBLockbuster
@@ -15,13 +20,7 @@
   #// Chaque séries à une saison avec plusieurs épisodes, aussi elle peut avoir plusierus saison
   #// Crée l'entité séries : dans cette entitée mettre : name, relation avec genre+acteurs+realisateurs, number episode, number saison,
   #// Crée entitée video_séries : dans cette entitée mettre : url, relation avec séries, saison_number, episode_number
+  #// Ajouter les tags
 
-
-#// TERMINER :
-#// Faire toute la génération sur le front.
-
-#// Fin tache :
-#// Quand on clique sur un genre, faire en sorte de voir tout les films du genre
-#// Quand on clique sur un artiste, faire en sorte de voir tout les films de l'artiste
-#// Quand on clique sur un real, faire en sorte de voir tout les films du real
-#// Liste de tout les films avec les filtres en ajax
+#// EN COURS :
+#// Pour la recherche, Faire en sorte que ça soit stylé, faire les bons liens et slug, ecrire un message en information qu'il faut cliquez sur Voir le film pour accedez au films.
