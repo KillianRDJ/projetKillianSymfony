@@ -21,6 +21,3 @@
   #// Crée l'entité séries : dans cette entitée mettre : name, relation avec genre+acteurs+realisateurs, number episode, number saison,
   #// Crée entitée video_séries : dans cette entitée mettre : url, relation avec séries, saison_number, episode_number
   #// Ajouter les tags
-
-#// EN COURS :
-#// Pour la recherche, Faire en sorte que ça soit stylé, faire les bons liens et slug, ecrire un message en information qu'il faut cliquez sur Voir le film pour accedez au films.

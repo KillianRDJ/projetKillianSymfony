@@ -47,9 +47,37 @@
         .ajaxSearch{
             display:none;
         }
+        .select2-result-repository .linkfilm{
+            font-size: 16px;
+            font-weight: bolder;
+            clear: both;
+            display: inline-block;
+        }
+        .select2-result-title{
+            display: inline-block;
+            font-size: 30px;
+            font-weight: bolder;
+            width: 80%;
+            clear: both;
+            vertical-align: top;
+        }
+        .select2-result-pochette img{
+            width: 15%;
+            float: left;
+            margin-right: 10px;
+        }
+        .fa-times-circle{
+            float: right;
+            color: white;
+            font-size: 20px;
+            margin-top: -10px;
+            margin-right: -8px;
+            cursor:pointer;
+        }
     </style>
     <body>
         <div id="popupSearch">
+            <i class="fa fa-times-circle"></i>
             <h3>Recherche un film</h3>
             <select class="ajaxSearch"></select>
         </div>
@@ -61,12 +89,18 @@
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
     <script>
+
         // page index films
         $('select#films_index_genres').select2();
         $('select#films_index_acteurs').select2();
         $('select#films_index_realisateurs').select2();
 
+        $('.fa-times-circle').click(function () {
+            $('#popupSearch').css('top', '-150px');
+        });
+
         $('#test').click(function (e) {
+
             e.preventDefault();
             var datagenre = $('#films_index_genres').val();
             var dataacteurs = $('#films_index_acteurs').val();
@@ -103,10 +137,6 @@
                     };
                 },
                 processResults: function (data, params) {
-                    // parse the results into the format expected by Select2
-                    // since we are using custom formatting functions we do not need to
-                    // alter the remote JSON data, except to indicate that infinite
-                    // scrolling can be used
                     params.page = params.page || 1;
 
                     return {
@@ -124,23 +154,33 @@
             templateResult: resultSearch,
             templateSelection: resultSelect
         });
-        function resultSearch(res, e){
 
-            console.log(res);
+        function resultSearch(res, e){
             if(res.loading){
                 return 'Attendez un moment..';
             }
-
+            var slugName = slugify(res.name);
             var markup = "<div class='select2-result-repository clearfix'>" +
                 "<div class='select2-result-pochette'><img src='" + res.url_pochette + "' </div>"  +
-                "<div class='select2-result-title'>Titre '"+ res.name +"'</div><a href='#'>Voir le film</a>" ;
+                "<div class='select2-result-title'>"+ res.name +"</div><a href='films/"+ slugName +"-"+ res.id +"' class='linkfilm'>Voir le film</a>" ;
             return markup;
         }
         function resultSelect(res, e){
-            e.preventDefault();
+            if (e != null) {
+                e.preventDefault();
+            }
         }
-
-
+        function slugify(string) {
+            return string
+                .toString()
+                .trim()
+                .toLowerCase()
+                .replace(/\s+/g, "-")
+                .replace(/[^\w\-]+/g, "")
+                .replace(/\-\-+/g, "-")
+                .replace(/^-+/, "")
+                .replace(/-+$/, "");
+        }
 
 
 

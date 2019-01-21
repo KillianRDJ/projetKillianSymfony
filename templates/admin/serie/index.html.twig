@@ -1,0 +1,60 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %} Gestions des séries | ADMIN {% endblock %}
+
+{% block body %}
+<main class="main">
+    <ol class="breadcrumb">
+
+    </ol>
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fa fa-align-justify"></i> Toutes les series</div>
+                    <div class="card-body">
+                        <table class="table table-responsive-sm table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for serie in series %}
+                                <tr>
+                                    <td>{{ serie.id }}</td>
+                                    <td>{{ serie.name }}</td>
+                                    <td>
+                                        <span class="badge badge-warning"><a href="{{ path('serie_show', {'id': serie.id}) }}">show</a></span>
+                                        <span class="badge badge-danger"><a href="{{ path('serie_edit', {'id': serie.id}) }}">edit</a></span>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="3">no records found</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                        <a href="{{ path('admin.serie.new') }}">Create une nouvelle serie</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+{% endblock %}
+
+
+
+
+

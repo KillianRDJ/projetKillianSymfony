@@ -80,6 +80,23 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item  nav-dropdown  ">
+                    <a class="nav-link  nav-dropdown-toggle " href="#">
+                        Séries
+                    </a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{ path('admin.serie.index') }}">
+                                Toute les séries
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{ path('admin.films.index') }}">
+                                Ajouter un épisode
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
     </div>
     {% block body %}
