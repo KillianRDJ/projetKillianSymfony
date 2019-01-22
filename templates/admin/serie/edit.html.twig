@@ -1,13 +1,75 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/base.html.twig' %}
 
 {% block title %}Edit Serie{% endblock %}
 
 {% block body %}
-    <h1>Edit Serie</h1>
+<main class="main">
+    <ol class="breadcrumb">
 
-    {{ include('serie/_form.html.twig', {'button_label': 'Update'}) }}
+    </ol>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fa fa-align-justify"></i> Editer le film</div>
+                    <div class="card-body">
+                        {{ include('admin/serie/_form.html.twig', {'button_label': 'Editer le film'}) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <a href="{{ path('serie_index') }}">back to list</a>
+    {{ include('admin/serie/_delete_form.html.twig') }}
+</main>
+    <a href="{{ path('admin.serie.index') }}">back to list</a>
 
-    {{ include('serie/_delete_form.html.twig') }}
+{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css">
+    <style>
+        .select2 {
+            width: 100% !important;
+        }
+        .hidden{
+            display:none;
+        }
+    </style>
+{% endblock %}
+{% block javascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
+    <script>
+        $('select#serie_Genre').select2();
+        $('select#serie_Acteur').select2();
+        $('select#serie_Realisateur').select2();
+
+        $('#NeedInfo').click(function() {
+            console.log('ok');
+            var title = $('#serie_name').val();
+
+            $.ajax({
+                url: "http://www.omdbapi.com/",
+                method: "GET",
+                data: { apikey : 'b52996e', t : title, },
+                dataType: "json"
+            })
+                .done(function(res) {
+                    if(res.Error){
+                        alert(res.Error);
+                    }else{
+                        $('.Actors').text(res.Actors);
+                        $('.Director').text(res.Director);
+                        $('.Genre').text(res.Genre);
+                        $('.Runtime').text(res.Runtime);
+                        $('.Released').text(res.Released);
+                        $('.Poster').attr('href', res.Poster);
+
+                        $('.hidden').show();
+                    }
+
+                    console.log(res);
+                });
+        });
+    </script>
 {% endblock %}

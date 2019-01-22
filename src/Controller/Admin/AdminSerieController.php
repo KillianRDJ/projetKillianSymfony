@@ -74,7 +74,7 @@ class AdminSerieController extends AbstractController
             ]);
         }
 
-        return $this->render('serie/edit.html.twig', [
+        return $this->render('admin/serie/edit.html.twig', [
             'serie' => $serie,
             'form' => $form->createView(),
         ]);

@@ -21,3 +21,6 @@
   #// Crée l'entité séries : dans cette entitée mettre : name, relation avec genre+acteurs+realisateurs, number episode, number saison,
   #// Crée entitée video_séries : dans cette entitée mettre : url, relation avec séries, saison_number, episode_number
   #// Ajouter les tags
+
+#// TODO SERIES
+#// Ajouter un nouveau épisode si la série à été crée pour récupéré l'id de la séries lors de l'enregistrement.
