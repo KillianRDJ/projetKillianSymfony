@@ -34,12 +34,15 @@ class AdminSerieController extends AbstractController
         $form = $this->createForm(SerieType::class, $serie);
         $form->handleRequest($request);
 
+
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($serie);
             $entityManager->flush();
 
-            return $this->redirectToRoute('admin.serie.index');
+            return $this->redirectToRoute('admin.serie.index', [
+                'id' => $serie->getId(),
+            ]);
         }
 
         return $this->render('admin/serie/new.html.twig', [
