@@ -24,3 +24,4 @@
 
 #// TODO SERIES
 #// Ajouter un nouveau épisode si la série à été crée pour récupéré l'id de la séries lors de l'enregistrement.
+#// Faire en sorte que quand on clique sur le bouton noir ça permet d'ouvrire une popup pour mettre les élémements
